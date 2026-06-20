@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../engine/game_engine.dart';
 import '../data/game_data.dart';
+import '../models/location.dart' show Location;
 import '../utils/formatter.dart';
 import 'menu_screen.dart';
 import 'how_to_screen.dart';
