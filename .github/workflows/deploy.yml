@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -18,30 +18,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - uses: actions/checkout@v4
+      
+      - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          cache: true
-
-      - name: Enable web support
-        run: flutter config --enable-web
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Build web release
-        run: |
-          flutter build web \
-            --release \
-            --web-renderer canvaskit \
-            --base-href "/${{ github.event.repository.name }}/"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          flutter-version: '3.22.0'
+      
+      - run: flutter config --enable-web
+      
+      - run: flutter pub get
+      
+      - run: flutter build web --release --base-href "/writers_empire/"
+      
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
 
