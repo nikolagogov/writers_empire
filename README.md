@@ -1,50 +1,20 @@
-# 📖 Writer's Empire Tycoon
+# Writer's Empire
 
-**Build your writing empire from a bedroom desk to literary immortality.**
+A clean Flutter idle/tycoon game prototype built from scratch.
 
-[![Deploy to GitHub Pages](https://github.com/nikolagogov/writers_empire/actions/workflows/deploy.yml/badge.svg)](https://github.com/nikolagogov/writers_empire/actions/workflows/deploy.yml)
+## Core loop
+WRITE -> buy upgrades -> unlock the next location -> GET A MUSE -> restart faster.
 
----
+## Current UI
+- Everything is on one gameplay screen.
+- Six upgrades are always visible in a 2 x 3 grid.
+- GO TO [next location] appears only when affordable.
+- GET A MUSE appears only after reaching the prestige threshold.
+- Muse gives +5% permanent production per Muse.
+- Local save and offline production are included.
 
-## 🎮 Play Now
-
-👉 **[Play Writer's Empire Tycoon](https://nikolagogov.github.io/writers_empire/)**
-
----
-
-## 📖 What is Writer's Empire?
-
-**Writer's Empire** is an idle/clicker game where you start as a writer in your childhood bedroom and progress through 20 levels to become a literary legend.
-
-### Core Mechanics:
-
-- ✍️ **Tap "Write"** to generate words
-- 📈 **Buy upgrades** (Keyboard, Coffee, Editor, Ghost Writer, AI Bot)
-- 🏠 **Progress through 20 locations** – from "Child's Room" to "Immortal Word"
-- 📚 **Publish 8 books** at milestone word counts
-- 🌟 **Retire for a Muse** – permanent +10% production bonus
-- 🔁 **Retire multiple times** – endless prestige cycle
-
-### Technologies:
-
-- **Flutter** (Dart)
-- **Shared Preferences** (save game progress)
-- **PWA** (installable on your phone)
-- **GitHub Pages** (free hosting)
-
----
-
-## 🛠️ Local Development
-
+## Run
 ```bash
-# Clone the repository
-git clone https://github.com/nikolagogov/writers_empire.git
-
-# Install dependencies
 flutter pub get
-
-# Run in browser
 flutter run -d chrome
-
-# Build for web
-flutter build web --release --web-renderer canvaskit
+```
